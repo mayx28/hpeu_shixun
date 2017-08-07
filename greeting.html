@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>js问候界面</title>
+    <style type="text/css">
+    #container {
+        width: 550px;
+        height: 150px;
+        margin: 0 auto;
+        background-color: #50b7c1;
+        font-family: 方正舒体;
+        font-size: 30px;
+        text-align: center;
+        line-height: 150px;
+    }
+    </style>
+    <script type="text/javascript">
+    function nowdate() {
+        //获取时间对象
+        var mydate = new Date();
+        var year = mydate.getFullYear(); //年
+        var month = mydate.getMonth() + 1; //月
+        var date = mydate.getDate(); //日
+        var hour = mydate.getHours(); //小时
+        var minute = mydate.getMinutes(); //分
+        var seconds = mydate.getSeconds(); //秒
+        var day = mydate.getDay(); //星期几
+        //星期数组
+        var dayArray = ["星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日"];
+        var time = year + "年" + month + "月" + date + "日" + style(hour) + ":" + style(minute) + ":" + style(seconds) + "&nbsp;&nbsp;" + dayArray[day - 1];
+        //将时间打印到指定的页面
+        document.getElementById("container").innerHTML = "现在时间：" + time;
+    }
+    //判断时间并弹出问候框
+    function greeting() {
+        //获取时间对象
+        var mydate = new Date();
+        var hour = mydate.getHours(); //小时
+        if (5 <= hour && hour < 8) {
+            setTimeout("alert( 'good morning！ 你起得太早了')", 1000);
+        } else if (8 <= hour && hour < 12) {
+            setTimeout("alert('上午好啊')", 1000);
+        } else if (12 <= hour && hour < 18) {
+            setTimeout("alert('下午好啊，来杯下午茶~')", 1000);
+        } else if (18 <= hour && hour < 21) {
+            setTimeout("alert('晚上好啊~')", 1000);
+        } else if (21 <= hour && hour < 23) {
+            setTimeout("alert('good night!好梦~')", 1000);
+        } else {
+            setTimeout("alert('该睡觉了！明天还有课呢~')", 1000);
+        }
+    }
+    // 若时间为单数，则之前加一个0
+    function style(str) {
+        var key;
+        str >= 10 ? key = str : key = "0" + str;
+        return key;
+    }
+    //定时器，每一秒中循环一次
+    var timer = setInterval("nowdate()", 1000);
+    //一秒后弹出问候框
+    setTimeout("greeting()", 1000);
+    // 10秒后清除定时器
+    setTimeout(function() {
+        clearInterval(timer);
+    }, 10000);
+    </script>
+</head>
+
+<body>
+    <div id="container">
+    </div>
+</body>
+
+</html>
