@@ -1,0 +1,125 @@
+ * {
+     padding: 0;
+     margin: 0;
+ }
+
+ body {
+     background-color: #281f1d;
+ }
+
+ #content {
+     height: 750px;
+     width: 1000px;
+     margin: 0 auto;
+     background-color: #f2eada;
+ }
+
+ #content #header {
+     height: 50px;
+     line-height: 50px;
+ }
+
+ #content .nav-top {
+     height: 50px;
+     line-height: 50px;
+ }
+
+ #content .nav-top ul li {
+     display: inline;
+ }
+
+ #content .mainshow {
+     height: 550px;
+     width: 100%;
+ }
+
+ #content .mainshow .show-left {
+     height: 550px;
+     width: 70%;
+     float: left;
+ }
+
+ #content .mainshow .show-left .picture-content {
+     height: 300px;
+     width: 100%;
+ }
+
+ #content .mainshow .show-left .picture-content .title {
+     height: 90px;
+     width: 100%;
+ }
+
+ #content .mainshow .show-left .picture-content .content-center {
+     height: 210px;
+     width: 100%;
+ }
+
+ #content .mainshow .show-left .picture-content .content-center .picture {
+     height: 200px;
+     width: 50%;
+     float: left;
+ }
+
+ #content .mainshow .show-left .picture-content .content-center .picture img {
+     margin-left: 40px;
+ }
+
+ #content .mainshow .show-left .picture-content .content-center .dictum {
+     height: 200px;
+     width: 50%;
+     float: left;
+ }
+
+ #content .mainshow .show-left .essay {
+     height: 250px;
+     width: 100%;
+     text-indent: 2em;
+ }
+
+ #content .mainshow .show-left .essay a {
+     font-style: italic;
+ }
+
+ #content .mainshow .sidebar {
+     height: 550px;
+     width: 30%;
+     float: left;
+ }
+
+ #content .mainshow .sidebar aside ul li,
+ h3 {
+     margin-left: 60px;
+     margin-top: 20px;
+     list-style: none;
+ }
+
+ #content .bottom {
+     height: 100px;
+     width: 100%;
+     text-align: center;
+ }
+
+ #content .bottom footer {
+     height: 50px;
+     width: 100%;
+     line-height: 50px;
+ }
+
+ #content .bottom .nav-bottom {
+     height: 50px;
+     width: 100%;
+     line-height: 50px;
+ }
+
+ #content .bottom .nav-bottom ul li {
+     display: inline;
+ }
+
+ a {
+     color: black;
+     text-decoration: none;
+ }
+
+ a:hover {
+     color: #1DA391;
+ }
