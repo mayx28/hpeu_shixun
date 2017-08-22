@@ -33,50 +33,50 @@
      width: 100%;
  }
 
- #content .mainshow .show-left {
+ .mainshow .show-left {
      height: 550px;
      width: 70%;
      float: left;
  }
 
- #content .mainshow .show-left .picture-content {
+ .show-left .picture-content {
      height: 300px;
      width: 100%;
  }
 
- #content .mainshow .show-left .picture-content .title {
+ .picture-content .title {
      height: 90px;
      width: 100%;
  }
 
- #content .mainshow .show-left .picture-content .content-center {
+ .picture-content .content-center {
      height: 210px;
      width: 100%;
  }
 
- #content .mainshow .show-left .picture-content .content-center .picture {
+ .picture-content .content-center .picture {
      height: 200px;
      width: 50%;
      float: left;
  }
 
- #content .mainshow .show-left .picture-content .content-center .picture img {
+ .picture-content .content-center .picture img {
      margin-left: 40px;
  }
 
- #content .mainshow .show-left .picture-content .content-center .dictum {
+ .picture-content .content-center .dictum {
      height: 200px;
      width: 50%;
      float: left;
  }
 
- #content .mainshow .show-left .essay {
+ .show-left .essay {
      height: 250px;
      width: 100%;
      text-indent: 2em;
  }
 
- #content .mainshow .show-left .essay a {
+ .show-left .essay a {
      font-style: italic;
  }
 
@@ -86,7 +86,7 @@
      float: left;
  }
 
- #content .mainshow .sidebar aside ul li,
+ .sidebar aside ul li,
  h3 {
      margin-left: 60px;
      margin-top: 20px;
@@ -105,13 +105,13 @@
      line-height: 50px;
  }
 
- #content .bottom .nav-bottom {
+ .bottom .nav-bottom {
      height: 50px;
      width: 100%;
      line-height: 50px;
  }
 
- #content .bottom .nav-bottom ul li {
+ .bottom .nav-bottom ul li {
      display: inline;
  }
 
