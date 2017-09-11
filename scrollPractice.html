@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>滚动条</title>
+    <script src="http://code.jquery.com/jquery-2.1.3.js"></script>
+    <style type="text/css" media="screen">
+    #container {
+        width: 700px;
+        height: 600px;
+        margin: 0 auto;
+        margin-top: 25px;
+    }
+
+    .leftContent,
+    .rightContent {
+        width: 200px;
+        height: 500px;
+        overflow: auto;
+    }
+
+    .leftContent {
+        float: left;
+    }
+
+    .rightContent {
+        float: right
+    }
+
+    .leftDiv,
+    .rightDiv {
+        width: 200px;
+        height: 1000px;
+        background: linear-gradient(to top, #f58f98, #78cdd1);
+    }
+    </style>
+    <script type="text/javascript">
+    $(function() {
+
+        $(".leftContent").scroll(function() {
+            $(".rightContent").scrollTop($(".leftContent").scrollTop());
+        })
+
+        $(".rightContent").scroll(function() {
+            $(".leftContent").scrollTop($(".rightContent").scrollTop());
+        })
+    });
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <div class="leftContent">
+            <div class="leftDiv">
+            </div>
+        </div>
+        <div class="rightContent">
+            <div class="rightDiv">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
