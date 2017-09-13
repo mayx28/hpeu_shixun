@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>电影列表</title>
+</head>
+<style type="text/css">
+#container {
+    width: 700px;
+    margin: 0 auto;
+}
+
+#container table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+#container table thead {
+    border-bottom: 2px solid #A3A2A2;
+}
+
+#container table caption {
+    height: 50px;
+    line-height: 50px;
+    font-size: 24px;
+}
+
+table th {
+    height: 50px;
+    width: 50px;
+    font-size: 18px;
+}
+
+table tbody tr {
+    height: 45px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+#container table tbody tr:nth-child(2n-1) {
+    background-color: #CDF3F0;
+}
+
+.option {
+    width: 20px;
+    height: 20px;
+}
+
+.btn-set {
+    width: 700px;
+    height: 40px;
+    margin-top: 5px;
+}
+
+.btn-set button:hover {
+    filter: grayscale(0.5);
+}
+
+.btn-set button:active {
+    filter: grayscale(0.2);
+}
+
+.btn-set .renew,
+.btn-set .delete {
+    width: 345px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    border: 1px solid #D1CACA;
+    border-radius: 3px;
+    color: white;
+    letter-spacing: 5px;
+}
+
+.btn-set .renew {
+    float: left;
+    background-color: #1d953f;
+}
+
+.btn-set .delete {
+    float: right;
+    background-color: #d93a49;
+}
+</style>
+
+<body>
+    <div id="container">
+        <table>
+            <caption>电影菜单</caption>
+            <thead>
+                <tr>
+                    <th class="operation">操作</th>
+                    <th>名称</th>
+                    <th>主演</th>
+                    <th>导演</th>
+                    <th rules="">电影时长</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <input type="checkbox" class="option">
+                    </td>
+                    <td>蜘蛛侠：英雄归来</td>
+                    <td>汤姆.霍兰德</td>
+                    <td>乔.沃茨</td>
+                    <td>133分钟</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" class="option">
+                    </td>
+                    <td>敦刻尔克</td>
+                    <td>费恩怀特.海德</td>
+                    <td>克里斯托弗.诺兰</td>
+                    <td>107分钟</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" class="option">
+                    </td>
+                    <td>银魂</td>
+                    <td>小栗旬</td>
+                    <td>福田雄一</td>
+                    <td>130分钟</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" class="option">
+                    </td>
+                    <td>星际特工：千星之城</td>
+                    <td>戴恩德.哈恩</td>
+                    <td>吕克.贝松</td>
+                    <td>137分钟</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" class="option">
+                    </td>
+                    <td>声之行</td>
+                    <td>入野自由</td>
+                    <td>山田尚子</td>
+                    <td>111分钟</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="btn-set">
+            <button type="button" class="renew">恢复</button>
+            <button type="button" class="delete">删除</button>
+        </div>
+        <script type="text/javascript" src="./js/jquery-2.1.3.js"></script>
+        <script type="text/javascript">
+        var $table = null;
+
+        $(function() {
+            var $container = $("#container");
+            $table = $container.find("table");
+
+            //点击操作全选
+            $table.find(".operation").on("click", function() {
+                //获取列表中所有的checkbox
+                var checkboxItems = $table.find("input[class='option']");
+
+                //获取列表中选中checkbox
+                var checkedboxItems = $table.find("input[class='option']:checked");
+
+                //相等则为true,表示要反选，反之，则全选
+                var isChecked = checkboxItems.length === checkedboxItems.length;
+
+                checkboxItems.prop("checked", !isChecked);
+
+            });
+
+            //点击任意行激活checkbox
+            $table.find("tbody tr td:not(:first-child)").on("click", function() {
+                var $this = $(this).parent();
+                var $selectItem = $this.find("input[class='option']");
+                //获取当前状态值
+                var ischecked = $selectItem.prop("checked");
+
+                $selectItem.prop("checked", !ischecked);
+            });
+
+            //删除选中项
+            $container.find(".delete").on("click", function() {
+                //获取选中项
+                var checkedboxItems = $table.find("input[class='option']:checked");
+
+                if (checkedboxItems.length === 0) {
+                    alert("请选择待删除的选项！");
+                    return false;
+
+                }
+                if (confirm("确定删除选中项？")) {
+                    //隐藏选中项
+                    checkedboxItems.parent().parent().hide();
+
+                    //重新计算偶数行
+                    changeColor();
+
+
+                }
+            });
+
+            //恢复
+            $container.find(".renew").on("click", function() {
+                //获取被选中的项
+                var checkedboxItems = $table.find("input[class='option']:checked");
+
+                //恢复选中项，再找到其父级tr,最后显示
+                checkedboxItems.prop("checked", false).parent().parent().show();
+
+                //重新计算偶数行
+                changeColor();
+
+            });
+
+        });
+        //重新计算偶数行
+        function changeColor() {
+            //清空旧背景
+            $table.find("tbody tr").css("background-color", "white");
+
+            //更新偶数行，并更改其背景颜色
+            $table.find("tbody tr:not(:hidden):even").css("background-color", "#CDF3F0");
+
+        }
+        </script>
+</body>
+
+</html>
