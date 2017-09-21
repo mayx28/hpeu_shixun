@@ -10,7 +10,7 @@ import online.shixun.model.User;
 
 public class HibernateOneToManyToOneTest {
 	/**
-	 * ±£´æÓÃ»§¼°Æä¹ØÁª¶©µ¥
+	 * ä¿å­˜ç”¨æˆ·åŠå…¶å…³è”è®¢å•
 	 */
 	@Test
 	public void saveUserAndOrders() {
@@ -30,16 +30,14 @@ public class HibernateOneToManyToOneTest {
 		order2.setCode(567894);
 		order2.setCreateDate(new Date());
 
-		// ½¨Á¢¹ØÏµ
+		// å»ºç«‹å…³ç³»
 		user.getOrders().add(order1);
 		user.getOrders().add(order2);
 		order1.setUser(user);
 		order2.setUser(user);
 
-		// ±£´æ
+		// ä¿å­˜
 		session.save(user);
-		session.save(order1);
-		session.save(order2);
 
 		session.getTransaction().commit();
 		session.close();
@@ -47,7 +45,7 @@ public class HibernateOneToManyToOneTest {
 	}
 
 	/**
-	 * ²éÑ¯ÓÃ»§¼°Æä¶©µ¥
+	 * æŸ¥è¯¢ç”¨æˆ·åŠå…¶è®¢å•
 	 */
 	@Test
 	public void getUserAndOrders() {
@@ -62,7 +60,7 @@ public class HibernateOneToManyToOneTest {
 	}
 
 	/**
-	 * ±£´æ¶©µ¥¼°Æä¹ØÁªµÄÓÃ»§
+	 * ä¿å­˜è®¢å•åŠå…¶å…³è”çš„ç”¨æˆ·
 	 */
 	@Test
 	public void saveOrdersAndUser() {
@@ -77,14 +75,18 @@ public class HibernateOneToManyToOneTest {
 		Order order1 = new Order();
 		order1.setCode(879734);
 		order1.setCreateDate(new Date());
+		
+		Order order2 = new Order();
+		order2.setCode(342543);
+		order2.setCreateDate(new Date());
 
-		// ½¨Á¢¹ØÏµ
+		// å»ºç«‹å…³ç³»
 		user.getOrders().add(order1);
 		order1.setUser(user);
 
-		// ±£´æ
-		session.save(user);
+		// ä¿å­˜
 		session.save(order1);
+		session.save(order2);
 
 		session.getTransaction().commit();
 		session.close();
@@ -92,7 +94,7 @@ public class HibernateOneToManyToOneTest {
 	}
 
 	/**
-	 * ²éÑ¯¶©µ¥¼°ÓÃ»§
+	 * æŸ¥è¯¢è®¢å•åŠç”¨æˆ·
 	 */
 	@Test
 	public void getOrdersAndUser() {
