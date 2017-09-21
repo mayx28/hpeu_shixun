@@ -77,7 +77,7 @@ public class HibernateOneToManyToOneTest {
 		order1.setCreateDate(new Date());
 		
 		Order order2 = new Order();
-		order2.setCode(342543);
+		order2.setCode(543456);
 		order2.setCreateDate(new Date());
 
 		// 建立关系
