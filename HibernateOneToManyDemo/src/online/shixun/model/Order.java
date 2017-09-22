@@ -24,7 +24,6 @@ public class Order {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date createDate;
 
-	// 一对多不用写这个，不能获取user有关信息
 	// @ManyToOne(targetEntity = User.class)
 	// @Cascade(CascadeType.ALL)
 	// @JoinColumn(name = "User_id")
