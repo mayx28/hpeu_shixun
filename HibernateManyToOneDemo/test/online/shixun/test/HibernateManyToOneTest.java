@@ -10,7 +10,7 @@ import online.shixun.model.Status;
 
 public class HibernateManyToOneTest {
 	/**
-	 * ±£´æ¶©µ¥¼°×´Ì¬Êı¾İ
+	 * ä¿å­˜è®¢å•åŠçŠ¶æ€æ•°æ®
 	 */
 	@Test
 	public void saveOrder() {
@@ -30,11 +30,11 @@ public class HibernateManyToOneTest {
 		order3.setCreateDate(new Date());
 
 		Status status1 = new Status();
-		status1.setName("ÒÑÏÂµ¥");
+		status1.setName("å·²ä¸‹å•");
 		status1.setCreateDate(new Date());
 
 		Status status2 = new Status();
-		status2.setName("Î´¸¶¿î");
+		status2.setName("æœªä»˜æ¬¾");
 		status2.setCreateDate(new Date());
 
 		
@@ -42,7 +42,7 @@ public class HibernateManyToOneTest {
 		order2.setStatus(status1);
 		order3.setStatus(status2);
 		
-		// ±£´æ
+		// ä¿å­˜
 		session.save(order1);
 		session.save(order2);
 		session.save(order3);
@@ -55,14 +55,14 @@ public class HibernateManyToOneTest {
 	}
 
 	/**
-	 * ²é¿´¶©µ¥Êı¾İ
+	 * æŸ¥çœ‹è®¢å•æ•°æ®
 	 */
 	@Test
 	public void getOrder() {
 		Session session = HibernateUtil.getSession();
 		session.beginTransaction();
 
-		// ²éÑ¯idÎª1¶©µ¥ĞÅÏ¢
+		// æŸ¥çœ‹idä¸º1çš„è®¢å•ä¿¡æ¯
 		session.get(Order.class, 1);
 
 		session.getTransaction().commit();
