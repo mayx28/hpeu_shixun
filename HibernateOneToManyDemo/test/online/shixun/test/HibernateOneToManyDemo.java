@@ -11,20 +11,20 @@ import online.shixun.model.User;
 public class HibernateOneToManyDemo {
 
 	/**
-	 * ±£´æÓÃ»§¼°Æä¹ØÁªµÄ¶©µ¥Êı¾İ
+	 * ä¿å­˜ç”¨æˆ·åŠå…¶å…³è”çš„è®¢å•æ•°æ®
 	 */
 	@Test
 	public void saveUser() {
 		Session session = HibernateUtil.getSession();
 		session.beginTransaction();
 
-		// ²úÉúÒ»¸ö¿Í»§
+		// äº§ç”Ÿä¸€ä¸ªå®¢æˆ·
 		User user1 = new User();
 		user1.setLoginName("may");
 		user1.setPassword("123");
 		user1.setCreateDate(new Date());
 
-		// ²úÉúÈı¸ö¶©µ¥
+		// äº§ç”Ÿä¸‰ä¸ªè®¢å•
 		Order order1 = new Order();
 		order1.setCode(12345678);
 		order1.setCreateDate(new Date());
@@ -37,12 +37,12 @@ public class HibernateOneToManyDemo {
 		order3.setCode(23456543);
 		order3.setCreateDate(new Date());
 
-		// ½¨Á¢¹ØÏµ
+		// å»ºç«‹å…³ç³»
 		user1.getOrders().add(order1);
 		user1.getOrders().add(order2);
 		user1.getOrders().add(order3);
 
-		// ±£´æ
+		// ä¿å­˜
 		session.save(user1);
 
 		session.getTransaction().commit();
@@ -50,17 +50,15 @@ public class HibernateOneToManyDemo {
 	}
 
 	/**
-	 * ²éÑ¯ÓÃ»§¼°Æä¶©µ¥Êı¾İ
+	 * æŸ¥è¯¢ç”¨æˆ·åŠå…¶è®¢å•æ•°æ®
 	 */
 	@Test
 	public void getUser() {
 		Session session = HibernateUtil.getSession();
 		session.beginTransaction();
 
-		// ²éÑ¯idÎª1µÄÓÃ»§ĞÅÏ¢£¬¿ÉÒÔÏÔÊ¾ÓÃ»§¼°¶©µ¥ĞÅÏ¢
 		session.get(User.class, 1);
-
-		// ²éÑ¯idÎª1µÄorderĞÅÏ¢£¬¶àµÄÒ»·½²»ÄÜÏÔÊ¾ÉÙµÄÒ»·½£¨ÓÃ»§£©ĞÅÏ¢
+		
 		session.get(Order.class, 1);
 
 		session.getTransaction().commit();
