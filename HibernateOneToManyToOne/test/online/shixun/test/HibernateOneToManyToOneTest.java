@@ -75,14 +75,16 @@ public class HibernateOneToManyToOneTest {
 		Order order1 = new Order();
 		order1.setCode(879734);
 		order1.setCreateDate(new Date());
-		
+
 		Order order2 = new Order();
 		order2.setCode(543456);
 		order2.setCreateDate(new Date());
 
 		// 建立关系
 		user.getOrders().add(order1);
+		user.getOrders().add(order2);
 		order1.setUser(user);
+		order2.setUser(user);
 
 		// 保存
 		session.save(order1);
