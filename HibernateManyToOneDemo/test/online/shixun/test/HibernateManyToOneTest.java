@@ -46,10 +46,7 @@ public class HibernateManyToOneTest {
 		session.save(order1);
 		session.save(order2);
 		session.save(order3);
-		session.save(status1);
-		session.save(status2);
 		
-
 		session.getTransaction().commit();
 		session.close();
 	}
