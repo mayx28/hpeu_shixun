@@ -31,8 +31,8 @@ public class User {
 	private String loginName;
 	private String password;
 
-	// joinColum ºÍ mappedBy²»ÄÜÔÚÒ»ÆğÓÃ
-	// É¾³ımappedBy = "user"
+	// joinColum å’Œ mappedByä¸èƒ½åŒæ—¶ä½¿ç”¨
+	// åˆ é™¤mappedBy = "user"
 	@OneToMany(fetch = FetchType.EAGER)
 	@JoinColumn(name="user_id")
 	@Cascade(CascadeType.ALL)
