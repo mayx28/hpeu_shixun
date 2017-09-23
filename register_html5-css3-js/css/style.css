@@ -1,0 +1,134 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('../images/bg.jpg');
+}
+
+#container {
+    width: 850px;
+    height: 750px;
+    margin: 0 auto;
+    margin-top: 15px;
+    position: relative;
+    /* background-image: url('../images/bg.jpg'); */
+}
+
+#container .content {
+    width: 600px;
+    height: 650px;
+    position: absolute;
+    left: 130px;
+    top: 20px;
+    border-radius: 15px;
+    background-color: white;
+    opacity: 0.5;
+}
+
+#container .content .head {
+    font-family: 楷体;
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+}
+
+#container .content .main-content .userInfo .input-group {
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+}
+
+.input-group span {
+    color: red;
+}
+
+.input-group input {
+    width: 300px;
+    height: 25px;
+    border: 1px solid black;
+    font-size: 15px;
+    padding-left: 10px;
+}
+
+input:invalid+span::after {
+    content: "✖";
+    padding-left: 10px;
+}
+
+input:valid+span::after {
+    content: "✓";
+    padding-left: 10px;
+}
+
+#container .content .main-content .userInfo .sex {
+    width: 100%;
+    height: 60px;
+    margin-left: 92px;
+    line-height: 50px;
+}
+
+#container .content .main-content .userInfo .job {
+    width: 100%;
+    height: 60px;
+    margin-left: 92px;
+    line-height: 50px;
+}
+
+
+.job select {
+    width: 310px;
+    height: 25px;
+    border: 1px solid black;
+}
+
+#container .content .main-content .userInfo .hobby {
+    width: 100%;
+    height: 120px;
+    margin-left: 92px;
+    line-height: 120px;
+    position: relative;
+}
+
+.hobby select {
+    width: 310px;
+    height: 100px;
+    vertical-align: middle;
+    border: 1px solid black;
+}
+
+
+#container .content .main-content .userInfo .foot {
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    text-align: center;
+    line-height: 60px;
+}
+
+.foot .left-part {
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.foot .right-part {
+    width: 50%;
+    height: 100%;
+    float: right;
+}
+
+.foot button {
+    width: 70px;
+    height: 30px;
+    border-radius: 5px;
+    letter-spacing: 5px;
+    background-color: #95947A;
+}
+
+#container .bottom {
+    width: 600px;
+    height: 50px;
+    position: absolute;
+    top: 670px;
+    text-align: center;
+}
