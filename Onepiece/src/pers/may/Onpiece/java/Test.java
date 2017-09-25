@@ -3,10 +3,9 @@ package pers.may.Onpiece.java;
 public class Test {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		//ÊµÀı»¯¹ÊÊÂ¶ÔÏó
+		//å®ä¾‹åŒ–æ•…äº‹å¯¹è±¡
 		Story story = new Story();
-		//µ÷ÓÃ¹ÊÊÂÀàÖĞµÄ·½·¨
+		//è°ƒç”¨æ•…äº‹ç±»ä¸­çš„æ–¹æ³•
 		story.start();
 		story.firstBattle();
 		story.secondtBattle();

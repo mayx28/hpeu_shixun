@@ -4,13 +4,12 @@ import java.util.*;
 public class ShapeTest {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Scanner scanner=new Scanner(System.in);
 		Shape shape=new Shape();
 		while(true){
 			System.out.println("*********************");
-			System.out.println("1.Ô²ĞÎ£»2.³¤·½ĞÎ");
-			System.out.println("ÇëÑ¡Ôñ²Ù×÷~~~");
+			System.out.println("1.åœ†å½¢ï¼›2.é•¿æ–¹å½¢");
+			System.out.println("è¯·é€‰æ‹©æ“ä½œ~~~");
 			String option=scanner.nextLine();
 			if("1".equals(option)){
 				shape=new Circle();
@@ -23,7 +22,7 @@ public class ShapeTest {
 				shape.area();
 			}
 			else{
-				System.out.println("´íÎó²Ù×÷£¡£¡£¡");
+				System.out.println("é”™è¯¯æ“ä½œï¼ï¼ï¼");
 			}
 			
 		}
