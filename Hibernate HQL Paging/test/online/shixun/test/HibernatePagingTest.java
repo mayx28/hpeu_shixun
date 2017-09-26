@@ -46,8 +46,10 @@ public class HibernatePagingTest {
 
 			Query query = session.createQuery("from Commodity where name like ?");
 			query.setString(0, "%电视%");
-			query.setFirstResult((2 - 1) * 3);
-			query.setMaxResults(3);
+			int page = 2;
+			int n = 3;
+			query.setFirstResult((page - 1) * n);
+			query.setMaxResults(n);
 
 			List<Commodity> list = query.list();
 
