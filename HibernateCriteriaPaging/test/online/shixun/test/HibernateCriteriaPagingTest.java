@@ -50,8 +50,10 @@ public class HibernateCriteriaPagingTest {
 
 			Criteria criteria = session.createCriteria(Commodity.class);
 			criteria.add(Restrictions.like("name", "%电视%")).list();
-			criteria.setFirstResult((2 - 1) * 3);
-			criteria.setMaxResults(3);
+			int page = 2;
+			int n = 3;
+			criteria.setFirstResult((page - 1) * n);
+			criteria.setMaxResults(n);
 			criteria.addOrder(Property.forName("createDate").desc());
 			List<Commodity> list = criteria.list();
 
