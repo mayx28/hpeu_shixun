@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>用户管理系统</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+
+<body>
+    <div id="topPanel">
+        <div class="logo-panel">
+            <div class="logo-content-panel">
+                <img src="./images/logo.png" alt="" width="100px" height="80px">
+            </div>
+            <h5>用户管理系统</h5>
+        </div>
+        <div class="menu-panel">
+            <ul>
+                <li><a href="javascript:;">帮助</a></li>
+                <li><a href="javascript:;">退出</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="bottomPanel">
+        <div class="menu-panel">
+            <div class="menu-content-panel">
+                <ul class="nav">
+                    <li ><a href="userList.html">用户查询</a></li>
+                    <li class="active"><a href="userForm.html">用户新增</a></li>
+                </ul>
+            </div>
+            <div class="avatar-panel">
+                <div class="avatar-content-panel">
+                    <div></div>
+                </div>
+                <div class="avatar-text-panel">当前登录用户</div>
+            </div>
+        </div>
+        <div class="content-panel">
+            <form action="#" method="post" accept-charset="utf-8">
+                <div class="content">
+                    <p>新增&编辑用户信息</p>
+                    <div class="input-group">
+                        <label for="">用户名称：</label>
+                        <input type="text" placeholder="请输入用户名！" id="username" minlength="6" maxlength="20" required><span></span>
+                        <br>
+                        <p class="tips1"></p>
+                    </div>
+                    <div class="input-group">
+                        <label for="">登录密码：</label>
+                        <input type="password" id="password" placeholder="请输入密码！" minlength="6" maxlength="20" required><span></span>
+                        <br>
+                        <p class="tips2"></p>
+                    </div>
+                    <div class="input-group">
+                        <label for="">重复密码：</label>
+                        <input type="password" id="repeatPassword" placeholder="请再一次输入密码！" minlength="6" maxlength="20" required><span></span>
+                        <br>
+                        <p class="tips3"></p>
+                    </div>
+                    <div class="input-group">
+                        <label for="">电子邮箱：</label>
+                        <input type="email" placeholder="请输入邮箱！" id="email" required><span></span>
+                        <br>
+                        <p class="tips4"></p>
+                    </div>
+                    <div class="sex-input">
+                        <label for="">性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别:</label>
+                        <input type="radio" name="sex" value="male" checked>男
+                        <input type="radio" name="sex" value="female">女
+                    </div>
+                    <hr>
+                    <div class="button-group">
+                        <button type="submit" id="save">保存</button>
+                        <button type="reset">重置</button>
+                        <button type="button">返回</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.js"></script>
+    <script type="text/javascript" src="./js/common.js"></script>
+</body>
+
+</html>
